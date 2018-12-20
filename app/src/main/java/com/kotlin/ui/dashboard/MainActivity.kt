@@ -8,7 +8,9 @@ import com.kotlin.ui.R
 import com.kotlin.ui.databinding.ActivityMainBinding
 import android.view.View
 import android.content.res.Configuration
+import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBarDrawerToggle
+import com.kotlin.ui.home.HomeFragment
 import com.kotlin.ui.utils.AppUtil
 
 
@@ -27,6 +29,8 @@ class MainActivity : BaseActivity() {
 
         setActionBar()
         setNavigationDrawer()
+
+        addFragment(HomeFragment(), "navHome", R.id.mainFrameLayoutContainer)
     }
 
     @SuppressLint("RestrictedApi")
@@ -65,5 +69,10 @@ class MainActivity : BaseActivity() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         mDrawerToggle.onConfigurationChanged(newConfig)
+    }
+
+    override fun getCurrentFragment(): Fragment? {
+        //return supportFragmentManager!!.findFragmentById(R.id.mainFrameLayoutContainer)!!
+        return null
     }
 }

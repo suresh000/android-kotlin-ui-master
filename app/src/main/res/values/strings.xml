@@ -5,4 +5,12 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_home">Home</string>
+
+    <string name="add_user_activity_title">Add User</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="mobile">Mobile</string>
+    <string name="address">Address</string>
+    <string name="submit">Submit</string>
+
 </resources>
