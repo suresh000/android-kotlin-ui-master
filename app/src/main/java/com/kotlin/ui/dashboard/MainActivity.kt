@@ -9,6 +9,7 @@ import com.kotlin.ui.databinding.ActivityMainBinding
 import android.view.View
 import android.content.res.Configuration
 import android.support.v7.app.ActionBarDrawerToggle
+import com.kotlin.ui.utils.AppUtil
 
 
 class MainActivity : BaseActivity() {
@@ -21,6 +22,8 @@ class MainActivity : BaseActivity() {
         mBinding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         val vm = MainViewModel()
         mBinding.vm = vm
+
+        AppUtil.roundedOnlyTopCorner(mBinding.containerConstraintLayout, 60F)
 
         setActionBar()
         setNavigationDrawer()

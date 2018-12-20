@@ -19,7 +19,9 @@
 
             <android.support.design.widget.AppBarLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/dp_0"
+                    app:elevation="@dimen/dp_0">
 
                 <android.support.v7.widget.Toolbar
                         android:id="@+id/mainToolbar"
@@ -29,11 +31,31 @@
 
             </android.support.design.widget.AppBarLayout>
 
-            <FrameLayout
-                    android:id="@+id/mainFrameLayoutContainer"
+            <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:background="@color/colorPrimary">
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/containerConstraintLayout"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="@dimen/dp_0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@android:color/white">
+
+                    <FrameLayout
+                            android:id="@+id/mainFrameLayoutContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
 
         </android.support.design.widget.CoordinatorLayout>
 
