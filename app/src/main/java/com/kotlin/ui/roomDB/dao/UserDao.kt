@@ -1,5 +1,6 @@
 package com.kotlin.ui.roomDB.dao
 
+import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
 import com.kotlin.ui.roomDB.entity.User
 

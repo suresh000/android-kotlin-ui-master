@@ -20,7 +20,13 @@ class AddUserViewModel(private val mContext: Context) {
         userModel.setMobile(mobile.get()!!.toString())
         userModel.setAddress(address.get()!!.toString())
 
-        AppRoomDatabase.getInstance(mContext)!!.userDao().insert(userModel)
+        Thread(object : Runnable {
+
+            override fun run() {
+                AppRoomDatabase.getInstance(mContext)!!.userDao().insert(userModel)
+            }
+
+        }).start()
     }
 
 }

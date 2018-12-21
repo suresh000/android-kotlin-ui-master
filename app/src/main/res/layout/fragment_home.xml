@@ -4,7 +4,7 @@
         tools:context=".home.HomeFragment">
 
     <data>
-        <variable name="vm" type="com.kotlin.ui.home.HomeViewModel" />
+        <variable name="vm" type="com.kotlin.ui.home.HomeViewModel"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -14,7 +14,8 @@
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/homeRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:overScrollMode="never"/>
 
         <android.support.design.widget.FloatingActionButton
                 android:layout_width="wrap_content"
@@ -23,7 +24,7 @@
                 android:layout_margin="@dimen/dp_16"
                 app:fabSize="normal"
                 android:onClick="@{vm::addUserClick}"
-                android:src="@drawable/ic_add_white" />
+                android:src="@drawable/ic_add_white"/>
 
     </android.support.design.widget.CoordinatorLayout>
 
