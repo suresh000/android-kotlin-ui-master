@@ -8,18 +8,18 @@ import com.kotlin.ui.roomDB.dao.UserDao
 import com.kotlin.ui.roomDB.entity.User
 
 @Database(entities = [User::class], version = 1)
-abstract class MyRoomDatabase : RoomDatabase() {
+abstract class AppRoomDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
 
     companion object {
         private const val DB_NAME = "user_db"
-        private var INSTANCE: MyRoomDatabase? = null
+        private var INSTANCE: AppRoomDatabase? = null
 
-        fun getInstance(context: Context): MyRoomDatabase? {
+        fun getInstance(context: Context): AppRoomDatabase? {
             if (INSTANCE == null) {
-                synchronized(MyRoomDatabase::class) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                        MyRoomDatabase::class.java, DB_NAME)
+                synchronized(AppRoomDatabase::class) {
+                    INSTANCE = Room.databaseBuilder(context.applicationContext,
+                        AppRoomDatabase::class.java, DB_NAME)
                         .allowMainThreadQueries()
                         .build()
                 }
