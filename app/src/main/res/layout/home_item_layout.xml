@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="vm" type="com.kotlin.ui.home.HomeItemViewModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_marginRight="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_3"
+            app:cardElevation="@dimen/dp_0"
+            app:cardCornerRadius="@dimen/dp_3"
+            android:layout_marginBottom="@dimen/dp_3">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10">
+
+            <ImageView android:id="@+id/userImage"
+                       android:layout_width="40dp"
+                       android:layout_height="40dp"
+                       android:src="@drawable/ic_user_placeholder"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView android:id="@+id/nameTextView"
+                      android:layout_width="@dimen/dp_0"
+                      android:layout_height="wrap_content"
+                      app:layout_constraintStart_toEndOf="@+id/userImage"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="@+id/userImage"
+                      android:textSize="@dimen/sp_16"
+                      tools:text="Suresh Chandak"
+                      android:text="@{vm.userModel.get().getName()}"
+                      android:singleLine="true"
+                      android:ellipsize="end"
+                      android:textColor="@color/grey_800"
+                      android:layout_marginLeft="@dimen/dp_16"/>
+
+            <TextView android:id="@+id/mobileTextView"
+                      android:layout_width="@dimen/dp_0"
+                      android:layout_height="wrap_content"
+                      app:layout_constraintStart_toEndOf="@+id/userImage"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+                      android:textSize="@dimen/sp_12"
+                      tools:text="+91 8094592998"
+                      android:text="@{vm.userModel.get().getMobile()}"
+                      android:textColor="@color/grey_500"
+                      android:singleLine="true"
+                      android:ellipsize="end"
+                      android:layout_marginLeft="@dimen/dp_16"/>
+
+            <android.support.constraint.Barrier
+                    android:id="@+id/imageNameMobileBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="userImage,nameTextView,mobileTextView"/>
+
+            <TextView android:id="@+id/emailTextView"
+                      android:layout_width="@dimen/dp_0"
+                      android:layout_height="wrap_content"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/imageNameMobileBarrier"
+                      android:textSize="@dimen/sp_12"
+                      tools:text="Andheri West"
+                      android:text="@{vm.userModel.get().getEmail()}"
+                      android:textColor="@color/grey_500"/>
+
+            <TextView android:id="@+id/addressTextView"
+                      android:layout_width="@dimen/dp_0"
+                      android:layout_height="wrap_content"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/emailTextView"
+                      android:textSize="@dimen/sp_12"
+                      tools:text="Andheri West"
+                      android:text="@{vm.userModel.get().getAddress()}"
+                      android:textColor="@color/grey_500"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>
