@@ -5,6 +5,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_home">Home</string>
+    <string name="nav_support">Support</string>
+    <string name="nav_about">About US</string>
+    <string name="nav_logout">Logout</string>
 
     <string name="add_user_activity_title">Add User</string>
     <string name="name">Name</string>

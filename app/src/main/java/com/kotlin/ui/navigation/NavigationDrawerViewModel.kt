@@ -18,38 +18,26 @@ class NavigationDrawerViewModel(private val mContext: Context, navRecyclerView: 
 
         navList.add(
             NavigationDrawerItemViewModel(
-                mContext.resources.getDrawable(R.drawable.ic_home),
+                mContext.resources.getDrawable(R.drawable.ic_nav_home),
                 mContext.resources.getString(R.string.nav_home)
             )
         )
         navList.add(
             NavigationDrawerItemViewModel(
-                mContext.resources.getDrawable(R.drawable.ic_home),
-                mContext.resources.getString(R.string.nav_home)
+                mContext.resources.getDrawable(R.drawable.ic_nav_support),
+                mContext.resources.getString(R.string.nav_support)
             )
         )
         navList.add(
             NavigationDrawerItemViewModel(
-                mContext.resources.getDrawable(R.drawable.ic_home),
-                mContext.resources.getString(R.string.nav_home)
+                mContext.resources.getDrawable(R.drawable.ic_nav_about),
+                mContext.resources.getString(R.string.nav_about)
             )
         )
         navList.add(
             NavigationDrawerItemViewModel(
-                mContext.resources.getDrawable(R.drawable.ic_home),
-                mContext.resources.getString(R.string.nav_home)
-            )
-        )
-        navList.add(
-            NavigationDrawerItemViewModel(
-                mContext.resources.getDrawable(R.drawable.ic_home),
-                mContext.resources.getString(R.string.nav_home)
-            )
-        )
-        navList.add(
-            NavigationDrawerItemViewModel(
-                mContext.resources.getDrawable(R.drawable.ic_home),
-                mContext.resources.getString(R.string.nav_home)
+                mContext.resources.getDrawable(R.drawable.ic_nav_logout),
+                mContext.resources.getString(R.string.nav_logout)
             )
         )
 
