@@ -1,12 +1,13 @@
 package com.kotlin.ui.home.add
 
+import android.app.Activity
 import android.content.Context
 import android.databinding.ObservableField
 import android.view.View
 import com.kotlin.ui.roomDB.AppRoomDatabase
 import com.kotlin.ui.roomDB.entity.User
 
-class AddUserViewModel(private val mContext: Context) {
+class AddUserViewModel(private val mActivity: Activity) {
 
     val name = ObservableField<String>()
     val email = ObservableField<String>()
@@ -23,10 +24,12 @@ class AddUserViewModel(private val mContext: Context) {
         Thread(object : Runnable {
 
             override fun run() {
-                AppRoomDatabase.getInstance(mContext)!!.userDao().insert(userModel)
+                AppRoomDatabase.getInstance(mActivity)!!.userDao().insert(userModel)
             }
 
         }).start()
+
+        mActivity.finish()
     }
 
 }

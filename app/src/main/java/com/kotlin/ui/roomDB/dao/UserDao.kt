@@ -11,7 +11,7 @@ interface UserDao {
     fun insert(userModel: User)
 
     @Query("SELECT * FROM user")
-    fun getUserList() : List<User>
+    fun getUserList() : LiveData<List<User>>
 
     @Update
     fun updateUser(userModel: User)
