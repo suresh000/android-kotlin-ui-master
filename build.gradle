@@ -5,7 +5,6 @@ buildscript {
     ext.gradle_version = '3.1.4'
     ext.roomVersion = '1.1.1'
     ext.archLifecycleVersion = '1.1.1'
-    ext.coroutines = '0.26.1'
 
     repositories {
         google()

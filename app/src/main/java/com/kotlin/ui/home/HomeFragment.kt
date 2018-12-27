@@ -1,6 +1,7 @@
 package com.kotlin.ui.home
 
 
+import android.arch.lifecycle.Observer
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -12,6 +13,7 @@ import android.view.ViewGroup
 import com.kotlin.ui.R
 import com.kotlin.ui.databinding.FragmentHomeBinding
 import com.kotlin.ui.roomDB.AppRoomDatabase
+import com.kotlin.ui.roomDB.entity.User
 
 class HomeFragment : Fragment() {
 
@@ -28,19 +30,21 @@ class HomeFragment : Fragment() {
     }
 
     private fun setAdapter() {
-        Thread(object : Runnable {
+        val homeAdapter = HomeAdapter(context!!, ArrayList<HomeItemViewModel>())
+        mBinding.homeRecyclerView.adapter = homeAdapter
+        mBinding.homeRecyclerView.layoutManager = LinearLayoutManager(context!!)
 
-            override fun run() {
-                val userList = AppRoomDatabase.getInstance(context!!)!!.userDao().getUserList()
+        val userList = AppRoomDatabase.getInstance(context!!)!!.userDao().getUserList()
+        userList.observe(this, object : Observer<List<User>> {
+
+            override fun onChanged(userList: List<User>?) {
                 val userViewModelList = ArrayList<HomeItemViewModel>()
-                for (user in userList) {
+                for (user in userList!!) {
                     userViewModelList.add(HomeItemViewModel(user))
                 }
-                val homeAdapter = HomeAdapter(context!!, userViewModelList)
-                mBinding.homeRecyclerView.adapter = homeAdapter
-                mBinding.homeRecyclerView.layoutManager = LinearLayoutManager(context!!)
+                homeAdapter.addItems(userViewModelList)
             }
+        })
 
-        }).start()
     }
 }
