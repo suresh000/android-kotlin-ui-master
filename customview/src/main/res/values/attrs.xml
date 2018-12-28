@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="app_font" format="enum">
+        <enum name="OpenSans-Bold" value="0" />
+        <enum name="OpenSans-BoldItalic" value="1" />
+        <enum name="OpenSans-ExtraBold" value="2" />
+        <enum name="OpenSans-Italic" value="3" />
+        <enum name="OpenSans-Light" value="4" />
+        <enum name="OpenSans-Regular" value="5" />
+        <enum name="OpenSans-Semibold" value="6" />
+    </attr>
+
+</resources>
