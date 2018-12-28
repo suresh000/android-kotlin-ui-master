@@ -13,37 +13,54 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     protected fun addFragment(fragment: Fragment, tag: String, container: Int) {
-        var currentFragmentName = ""
-        val f = getCurrentFragment()
-        if (f != null) {
-            currentFragmentName = f::class.java.name
-        }
-        if (fragment::class.java.name.equals(currentFragmentName)) {
-            return
-        }
+        Thread(object : Runnable {
 
-        val fragmentManager = supportFragmentManager
-        val transaction = fragmentManager.beginTransaction()
+            override fun run() {
+                var currentFragmentName = ""
+                val f = getCurrentFragment()
+                if (f != null) {
+                    currentFragmentName = f::class.java.name
+                }
+                if (fragment::class.java.name.equals(currentFragmentName)) {
+                    return
+                }
 
-        transaction.add(container, fragment);
-        transaction.commit();
+                val fragmentManager = supportFragmentManager
+                val transaction = fragmentManager.beginTransaction()
+
+                transaction.setCustomAnimations(R.anim.slide_in_down, 0, 0, R.anim.slide_out_down)
+
+                transaction.add(container, fragment)
+                transaction.commit()
+            }
+
+        }).start()
     }
 
     protected fun replaceFragment(fragment: Fragment, tag: String, container: Int) {
-        var currentFragmentName = ""
-        val f = getCurrentFragment()
-        if (f != null) {
-            currentFragmentName = f::class.java.name
-        }
-        if (fragment::class.java.name.equals(currentFragmentName)) {
-            return
-        }
+        Thread(object : Runnable {
 
-        val fragmentManager = supportFragmentManager
-        val transaction = fragmentManager.beginTransaction()
+            override fun run() {
+                var currentFragmentName = ""
+                val f = getCurrentFragment()
+                if (f != null) {
+                    currentFragmentName = f::class.java.name
+                }
+                if (fragment::class.java.name.equals(currentFragmentName)) {
+                    return
+                }
 
-        transaction.replace(container, fragment);
-        transaction.commit();
+                val fragmentManager = supportFragmentManager
+                val transaction = fragmentManager.beginTransaction()
+
+                transaction.setCustomAnimations(R.anim.slide_in_down, 0, 0, R.anim.slide_out_down)
+
+                transaction.replace(container, fragment)
+                transaction.commit()
+            }
+
+        }).start()
+
     }
 
 }
