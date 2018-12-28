@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".home.add.AddUserActivity">
+
+    <data>
+        <variable name="vm" type="com.kotlin.ui.home.add.AddUserViewModel" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/dp_0"
+                app:elevation="@dimen/dp_0">
+
+            <android.support.v7.widget.Toolbar
+                    android:id="@+id/addUserToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:background="@color/colorPrimary">
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/addUserConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true">
+
+                <android.support.constraint.Guideline
+                        android:id="@+id/guidelineBegin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="@dimen/dp_16" />
+
+                <android.support.constraint.Guideline
+                        android:id="@+id/guidelineEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/dp_16" />
+
+                <EditText
+                        android:id="@+id/name"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name"
+                        android:text="@={vm.name}"
+                        android:layout_marginTop="@dimen/dp_30"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
+                        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                        android:id="@+id/email"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email"
+                        android:text="@={vm.email}"
+                        android:layout_marginTop="@dimen/dp_16"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
+                        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+                <EditText
+                        android:id="@+id/mobile"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/mobile"
+                        android:text="@={vm.mobile}"
+                        android:layout_marginTop="@dimen/dp_16"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
+                        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+                <EditText
+                        android:id="@+id/address"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/address"
+                        android:text="@={vm.address}"
+                        android:layout_marginTop="@dimen/dp_16"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
+                        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                        app:layout_constraintTop_toBottomOf="@+id/mobile" />
+
+                <Button
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@android:color/white"
+                        android:background="@color/colorAccent"
+                        android:onClick="@{vm::onSubmitClick}"
+                        android:text="@string/submit" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
