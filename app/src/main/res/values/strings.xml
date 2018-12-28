@@ -8,6 +8,8 @@
     <string name="nav_support">Support</string>
     <string name="nav_about">About US</string>
     <string name="nav_logout">Logout</string>
+    <string name="welcome">Welcome</string>
+    <string name="user_name">Suresh Chandak</string>
 
     <string name="add_user_activity_title">Add User</string>
     <string name="name">Name</string>

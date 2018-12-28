@@ -10,12 +10,20 @@ import android.view.View
 import android.content.res.Configuration
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBarDrawerToggle
+import android.widget.Toast
 import com.kotlin.ui.home.HomeFragment
+import com.kotlin.ui.navigation.NavigationDrawerFragment
+import com.kotlin.ui.navigation.NavigationViewType
 import com.kotlin.ui.utils.AppUtil
+import android.support.v4.view.GravityCompat
+import com.kotlin.ui.aboutUs.AboutUsFragment
 
 
-class MainActivity : BaseActivity() {
 
+
+class MainActivity : BaseActivity(), NavigationDrawerFragment.NavigationDrawerCallback {
+
+    private val FRAGMENT_RESOURCE_ID = R.id.mainFrameLayoutContainer
     private lateinit var mBinding: ActivityMainBinding
     private lateinit var mDrawerToggle: ActionBarDrawerToggle
 
@@ -27,18 +35,18 @@ class MainActivity : BaseActivity() {
 
         AppUtil.roundedOnlyTopCorner(mBinding.containerConstraintLayout, 60F)
 
-        setActionBar()
+        setActionBar("User List")
         setNavigationDrawer()
 
         addFragment(HomeFragment(), "navHome", R.id.mainFrameLayoutContainer)
     }
 
     @SuppressLint("RestrictedApi")
-    private fun setActionBar() {
+    private fun setActionBar(title: String) {
         setSupportActionBar(mBinding.mainToolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(false)
-        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        supportActionBar!!.title = title
     }
 
     private fun setNavigationDrawer() {
@@ -72,7 +80,36 @@ class MainActivity : BaseActivity() {
     }
 
     override fun getCurrentFragment(): Fragment? {
-        //return supportFragmentManager!!.findFragmentById(R.id.mainFrameLayoutContainer)!!
-        return null
+        val manager = getSupportFragmentManager()
+        return manager.findFragmentById(FRAGMENT_RESOURCE_ID)
+    }
+
+    /**
+     * Close the Navigation drawer
+     */
+    fun closeDrawer() {
+        if (mBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            mBinding.drawerLayout.closeDrawer(GravityCompat.START)
+        }
+    }
+
+    override fun onNavigationDrawerItemSelected(type: NavigationViewType) {
+        closeDrawer()
+        when (type) {
+            NavigationViewType.HOME -> {
+                setActionBar("User List")
+                replaceFragment(HomeFragment(), "navHome", R.id.mainFrameLayoutContainer)
+            }
+            NavigationViewType.PROFILE -> {
+
+            }
+            NavigationViewType.ABOUT_US -> {
+                setActionBar("About US")
+                replaceFragment(AboutUsFragment(), "navAboutUs", R.id.mainFrameLayoutContainer)
+            }
+            NavigationViewType.LOGOUT -> {
+                AppUtil.showToast(this, "Logout click...", true)
+            }
+        }
     }
 }
