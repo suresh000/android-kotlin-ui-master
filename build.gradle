@@ -5,6 +5,7 @@ buildscript {
     ext.gradle_version = '3.1.4'
     ext.roomVersion = '1.1.1'
     ext.archLifecycleVersion = '1.1.1'
+    ext.googleApiVersion = '16.0.0'
 
     repositories {
         google()
@@ -23,7 +24,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven { url "https://maven.google.com" }
     }
 }
 
