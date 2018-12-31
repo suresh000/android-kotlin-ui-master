@@ -49,6 +49,7 @@ dependencies {
 
     //google
     implementation "com.google.android.gms:play-services-maps:$rootProject.googleApiVersion"
+    implementation "com.google.android.gms:play-services-location:$rootProject.googleApiVersion"
 }
 
 kotlin {

@@ -9,6 +9,7 @@ import com.kotlin.ui.R
 import com.kotlin.ui.databinding.ActivityMainBinding
 import android.view.View
 import android.content.res.Configuration
+import android.os.Handler
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBarDrawerToggle
@@ -96,7 +97,6 @@ class MainActivity : BaseActivity(), NavigationDrawerFragment.NavigationDrawerCa
     }
 
     override fun onNavigationDrawerItemSelected(type: NavigationViewType) {
-        closeDrawer()
         when (type) {
             NavigationViewType.HOME -> {
                 setActionBar("User List")
@@ -120,6 +120,7 @@ class MainActivity : BaseActivity(), NavigationDrawerFragment.NavigationDrawerCa
                 AppUtil.showToast(this, "Logout click...", true)
             }
         }
+        closeDrawer()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
