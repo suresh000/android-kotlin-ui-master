@@ -37,6 +37,14 @@ class NavigationDrawerViewModel(private val mContext: Context, navRecyclerView: 
         )
         navList.add(
             NavigationDrawerItemViewModel(
+                mContext.resources.getDrawable(R.drawable.ic_nav_google),
+                mContext.resources.getString(R.string.nav_google),
+                NavigationViewType.GOOGLE,
+                onNavigationItemSelection
+            )
+        )
+        navList.add(
+            NavigationDrawerItemViewModel(
                 mContext.resources.getDrawable(R.drawable.ic_nav_support),
                 mContext.resources.getString(R.string.nav_support),
                 NavigationViewType.PROFILE,

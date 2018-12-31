@@ -46,6 +46,9 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$rootProject.archLifecycleVersion"
     kapt "android.arch.lifecycle:compiler:$rootProject.archLifecycleVersion"
     implementation project(':customview')
+
+    //google
+    implementation "com.google.android.gms:play-services-maps:$rootProject.googleApiVersion"
 }
 
 kotlin {
