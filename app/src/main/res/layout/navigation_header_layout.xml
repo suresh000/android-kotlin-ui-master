@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:padding="@dimen/dp_16">
+
+        <ImageView
+                android:id="@+id/navProfileImage"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_user_placeholder"/>
+
+        <com.kotlin.customview.widgets.CustomTextView
+                android:id="@+id/welcomeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/navProfileImage"
+                app:layout_constraintStart_toEndOf="@+id/navProfileImage"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_14"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:text="@string/welcome"/>
+
+        <com.kotlin.customview.widgets.CustomTextView
+                android:id="@+id/nameTextView"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeTextView"
+                app:layout_constraintStart_toEndOf="@+id/navProfileImage"
+                app:layout_constraintEnd_toStartOf="@+id/arrowRight"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_14"
+                app:app_font="OpenSans_Bold"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:text="@string/user_name"/>
+
+        <ImageView
+                android:id="@+id/arrowRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/nameTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/nameTextView"
+        />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

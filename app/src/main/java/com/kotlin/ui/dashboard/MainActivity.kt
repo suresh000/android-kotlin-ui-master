@@ -1,6 +1,7 @@
 package com.kotlin.ui.dashboard
 
 import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.kotlin.ui.BaseActivity
@@ -8,14 +9,24 @@ import com.kotlin.ui.R
 import com.kotlin.ui.databinding.ActivityMainBinding
 import android.view.View
 import android.content.res.Configuration
+import android.os.Handler
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBarDrawerToggle
+import android.widget.Toast
 import com.kotlin.ui.home.HomeFragment
+import com.kotlin.ui.navigation.NavigationDrawerFragment
+import com.kotlin.ui.navigation.NavigationViewType
 import com.kotlin.ui.utils.AppUtil
+import android.support.v4.view.GravityCompat
+import com.kotlin.ui.AppNavigator
+import com.kotlin.ui.aboutUs.AboutUsFragment
+import com.kotlin.ui.utils.AppPermissionUtil
 
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), NavigationDrawerFragment.NavigationDrawerCallback {
 
+    private val FRAGMENT_RESOURCE_ID = R.id.mainFrameLayoutContainer
     private lateinit var mBinding: ActivityMainBinding
     private lateinit var mDrawerToggle: ActionBarDrawerToggle
 
@@ -25,20 +36,20 @@ class MainActivity : BaseActivity() {
         val vm = MainViewModel()
         mBinding.vm = vm
 
-        AppUtil.roundedOnlyTopCorner(mBinding.containerConstraintLayout, 60F)
+        AppUtil.roundedOnlyTopCorner(mBinding.parentConstraintLayout, 60F)
 
-        setActionBar()
+        setActionBar("User List")
         setNavigationDrawer()
 
         addFragment(HomeFragment(), "navHome", R.id.mainFrameLayoutContainer)
     }
 
     @SuppressLint("RestrictedApi")
-    private fun setActionBar() {
+    private fun setActionBar(title: String) {
         setSupportActionBar(mBinding.mainToolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(false)
-        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        supportActionBar!!.title = title
     }
 
     private fun setNavigationDrawer() {
@@ -72,7 +83,64 @@ class MainActivity : BaseActivity() {
     }
 
     override fun getCurrentFragment(): Fragment? {
-        //return supportFragmentManager!!.findFragmentById(R.id.mainFrameLayoutContainer)!!
-        return null
+        val manager = getSupportFragmentManager()
+        return manager.findFragmentById(FRAGMENT_RESOURCE_ID)
+    }
+
+    /**
+     * Close the Navigation drawer
+     */
+    fun closeDrawer() {
+        if (mBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            mBinding.drawerLayout.closeDrawer(GravityCompat.START)
+        }
+    }
+
+    override fun onNavigationDrawerItemSelected(type: NavigationViewType) {
+        when (type) {
+            NavigationViewType.HOME -> {
+                setActionBar("User List")
+                replaceFragment(HomeFragment(), "navHome", R.id.mainFrameLayoutContainer)
+            }
+            NavigationViewType.GOOGLE -> {
+                if (AppUtil.isGoogleServicesOK(this)) {
+                    if (AppPermissionUtil.isLocationPermissionAllow(this)) {
+                        AppNavigator.navigateToGoogleActivity(this)
+                    }
+                }
+            }
+            NavigationViewType.PROFILE -> {
+
+            }
+            NavigationViewType.ABOUT_US -> {
+                setActionBar("About US")
+                replaceFragment(AboutUsFragment(), "navAboutUs", R.id.mainFrameLayoutContainer)
+            }
+            NavigationViewType.LOGOUT -> {
+                AppUtil.showToast(this, "Logout click...", true)
+            }
+        }
+        closeDrawer()
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when(requestCode) {
+            AppPermissionUtil.LOCATION_PERMISSION_REQUEST_CODE -> {
+                if (grantResults.size > 0) {
+                    var allowPermission = true
+                    for (i in grantResults) {
+                        if (i != PackageManager.PERMISSION_GRANTED) {
+                            allowPermission = false
+                        }
+                    }
+                    if (allowPermission) {
+                        AppNavigator.navigateToGoogleActivity(this)
+                    }
+                    else {
+                        AppUtil.showSnackbar(mBinding.mainCoordinatorLayout, "Google Api must need location permission", true)
+                    }
+                }
+            }
+        }
     }
 }
