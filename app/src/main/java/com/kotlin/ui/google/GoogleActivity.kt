@@ -17,7 +17,7 @@ class GoogleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_google)
         val suppoerMapFragment = getSupportFragmentManager().findFragmentById(R.id.map) as SupportMapFragment
-        mVm = GoogleViewModel(this, suppoerMapFragment)
+        mVm = GoogleViewModel(this, this, suppoerMapFragment)
         mBinding.vm = mVm
 
         AppUtil.roundedOnlyTopCorner(mBinding.parentConstraintLayout, 60F)

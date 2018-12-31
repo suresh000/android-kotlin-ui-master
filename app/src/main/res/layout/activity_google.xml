@@ -27,6 +27,7 @@
                     android:focusableInTouchMode="true">
 
                 <com.kotlin.customview.widgets.CustomAutoCompleteTextView
+                        android:id="@+id/locationSearchEditText"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_40"
                         android:layout_centerVertical="true"
@@ -35,6 +36,9 @@
                         android:layout_marginRight="@dimen/dp_16"
                         android:hint="Enter Address, City or Zip Code"
                         android:text="@={vm.searchText}"
+                        app:onEditorActionListener="@{vm.getOnEditorActionListener()}"
+                        android:inputType="textPostalAddress"
+                        android:imeOptions="actionSearch"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/sp_14"
                         android:drawableLeft="@drawable/ic_arrow_back_black"
