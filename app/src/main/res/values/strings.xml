@@ -6,6 +6,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_home">Home</string>
+    <string name="nav_android_view">Android View</string>
     <string name="nav_google">Google Api</string>
     <string name="nav_support">Support</string>
     <string name="nav_about">About US</string>
@@ -19,5 +20,11 @@
     <string name="mobile">Mobile</string>
     <string name="address">Address</string>
     <string name="submit">Submit</string>
+
+    <!-- Bottom Navigation view -->
+    <string name="title_shop">Shop</string>
+    <string name="title_gifts">Gifts</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_profile">Profile</string>
 
 </resources>

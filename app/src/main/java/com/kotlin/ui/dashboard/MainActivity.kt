@@ -21,6 +21,7 @@ import com.kotlin.ui.utils.AppUtil
 import android.support.v4.view.GravityCompat
 import com.kotlin.ui.AppNavigator
 import com.kotlin.ui.aboutUs.AboutUsFragment
+import com.kotlin.ui.androidView.AndroidViewFragment
 import com.kotlin.ui.utils.AppPermissionUtil
 
 
@@ -101,6 +102,10 @@ class MainActivity : BaseActivity(), NavigationDrawerFragment.NavigationDrawerCa
             NavigationViewType.HOME -> {
                 setActionBar("User List")
                 replaceFragment(HomeFragment(), "navHome", R.id.mainFrameLayoutContainer)
+            }
+            NavigationViewType.ANDROID_VIEW -> {
+                setActionBar("View")
+                replaceFragment(AndroidViewFragment(), "navAndroidView", R.id.mainFrameLayoutContainer)
             }
             NavigationViewType.GOOGLE -> {
                 if (AppUtil.isGoogleServicesOK(this)) {
