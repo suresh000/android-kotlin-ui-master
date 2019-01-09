@@ -2,7 +2,6 @@ package com.kotlin.ui.bottomNavigation
 
 import android.annotation.SuppressLint
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
@@ -16,8 +15,6 @@ import com.kotlin.ui.bottomNavigation.store.StoreFragment
 import com.kotlin.ui.databinding.ActivityBottomNavigationBinding
 import com.kotlin.ui.utils.AppUtil
 
-
-
 class BottomNavigationActivity : BaseActivity() {
 
     private val FRAGMENT_CONTAINER_ID = R.id.bottomNavigationContainer
@@ -25,13 +22,6 @@ class BottomNavigationActivity : BaseActivity() {
     override fun getCurrentFragment(): Fragment? {
         val manager = getSupportFragmentManager()
         return manager.findFragmentById(FRAGMENT_CONTAINER_ID)
-    }
-
-    companion object {
-        const val SHOP = "Shop"
-        const val MY_GIFTS = "My Gifts"
-        const val CART = "Cart"
-        const val PROFILE = "Profile"
     }
 
     private lateinit var mBinding: ActivityBottomNavigationBinding
@@ -45,7 +35,7 @@ class BottomNavigationActivity : BaseActivity() {
         setActionBar()
 
         mBinding.bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        replaceFragment(StoreFragment(), SHOP, FRAGMENT_CONTAINER_ID)
+        replaceFragment(StoreFragment(), resources.getString(R.string.title_shop), FRAGMENT_CONTAINER_ID)
     }
 
     private val mOnNavigationItemSelectedListener: BottomNavigationView.OnNavigationItemSelectedListener =
@@ -54,23 +44,23 @@ class BottomNavigationActivity : BaseActivity() {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when (item.itemId) {
                     R.id.navigation_shop -> {
-                        setToolbarTitle(SHOP)
-                        replaceFragment(StoreFragment(), SHOP, FRAGMENT_CONTAINER_ID)
+                        setToolbarTitle(resources.getString(R.string.title_shop))
+                        replaceFragment(StoreFragment(), resources.getString(R.string.title_shop), FRAGMENT_CONTAINER_ID)
                         return true
                     }
                     R.id.navigation_gifts -> {
-                        setToolbarTitle(MY_GIFTS)
-                        replaceFragment(GiftsFragment(), MY_GIFTS, FRAGMENT_CONTAINER_ID)
+                        setToolbarTitle(resources.getString(R.string.title_gifts))
+                        replaceFragment(GiftsFragment(), resources.getString(R.string.title_gifts), FRAGMENT_CONTAINER_ID)
                         return true
                     }
                     R.id.navigation_cart -> {
-                        setToolbarTitle(CART)
-                        replaceFragment(CartFragment(), CART, FRAGMENT_CONTAINER_ID)
+                        setToolbarTitle(resources.getString(R.string.title_cart))
+                        replaceFragment(CartFragment(), resources.getString(R.string.title_cart), FRAGMENT_CONTAINER_ID)
                         return true
                     }
                     R.id.navigation_profile -> {
-                        setToolbarTitle(PROFILE)
-                        replaceFragment(ProfileFragment(), PROFILE, FRAGMENT_CONTAINER_ID)
+                        setToolbarTitle(resources.getString(R.string.title_profile))
+                        replaceFragment(ProfileFragment(), resources.getString(R.string.title_profile), FRAGMENT_CONTAINER_ID)
                         return true
                     }
                 }
@@ -84,7 +74,7 @@ class BottomNavigationActivity : BaseActivity() {
         setSupportActionBar(mBinding.bottomNavigationToolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(false)
-        setToolbarTitle(SHOP)
+        setToolbarTitle(resources.getString(R.string.title_shop))
     }
 
     private fun setToolbarTitle(title: String) {
