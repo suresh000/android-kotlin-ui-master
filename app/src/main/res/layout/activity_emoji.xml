@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/mainCoordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+
+        <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/dp_0"
+                app:elevation="@dimen/dp_0">
+
+            <android.support.v7.widget.Toolbar
+                    android:id="@+id/bottomNavigationToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+                android:id="@+id/parentCoordinatorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_16">
+
+            <android.support.text.emoji.widget.EmojiAppCompatTextView
+                    android:id="@+id/emoji_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:textSize="@dimen/sp_20"/>
+
+            <android.support.text.emoji.widget.EmojiAppCompatEditText
+                    android:id="@+id/emoji_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:textSize="@dimen/sp_20"/>
+
+            <android.support.text.emoji.widget.EmojiAppCompatButton
+                    android:id="@+id/emoji_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:textSize="@dimen/sp_20"/>
+
+            <TextView
+                    android:id="@+id/regular_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:textSize="@dimen/sp_20"/>
+
+            <com.kotlin.ui.emoji.CustomEmojiTextView
+                    android:id="@+id/emoji_custom_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_20"/>
+
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
