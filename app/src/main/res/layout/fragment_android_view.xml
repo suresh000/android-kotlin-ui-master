@@ -26,6 +26,7 @@
                 android:orientation="vertical"/>
 
         <com.kotlin.customview.widgets.CustomButton
+                android:id="@+id/bottomNavigationButton"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
@@ -33,6 +34,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:text="Bottom Navigation View"
                 android:onClick="@{vm::onBottomNavigationClick}"
+                android:textAllCaps="false"/>
+
+        <com.kotlin.customview.widgets.CustomButton
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@+id/bottomNavigationButton"
+                android:text="Android Emoji Library"
+                android:onClick="@{vm::onAndroidEmojiLibraryClick}"
                 android:textAllCaps="false"/>
 
 

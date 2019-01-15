@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
           package="com.kotlin.ui">
+
+    <!-- Adding this meta-data will download the font when application is installed from
+        Google Play Store. This way the font will be downloaded and ready when your app starts
+        for the first time. -->
+    <meta-data android:name="fontProviderRequests" android:value="Noto Color Emoji Compat"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -14,7 +19,10 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".emoji.EmojiActivity">
+        </activity>
         <activity android:name=".bottomNavigation.BottomNavigationActivity">
         </activity>
 

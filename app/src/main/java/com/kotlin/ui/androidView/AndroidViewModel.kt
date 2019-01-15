@@ -10,4 +10,8 @@ class AndroidViewModel(val mContext: Context) {
         AppNavigator.navigateToBottomNavigationActivity(mContext)
     }
 
+    fun onAndroidEmojiLibraryClick(view: View) {
+        AppNavigator.navigateToEmojiActivity(mContext)
+    }
+
 }
