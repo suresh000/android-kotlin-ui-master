@@ -37,6 +37,7 @@
                 android:textAllCaps="false"/>
 
         <com.kotlin.customview.widgets.CustomButton
+                android:id="@+id/emojiButton"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
@@ -46,6 +47,15 @@
                 android:onClick="@{vm::onAndroidEmojiLibraryClick}"
                 android:textAllCaps="false"/>
 
+        <com.kotlin.customview.widgets.CustomButton
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@+id/emojiButton"
+                android:text="Retrofit"
+                android:onClick="@{vm::onRetrofitClick}"
+                android:textAllCaps="false"/>
 
     </android.support.constraint.ConstraintLayout>
 

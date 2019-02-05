@@ -6,6 +6,7 @@ import com.kotlin.ui.bottomNavigation.BottomNavigationActivity
 import com.kotlin.ui.emoji.EmojiActivity
 import com.kotlin.ui.google.GoogleActivity
 import com.kotlin.ui.home.add.AddUserActivity
+import com.kotlin.ui.retrofitExample.RetrofitActivity
 
 object AppNavigator {
 
@@ -26,6 +27,11 @@ object AppNavigator {
 
     fun navigateToEmojiActivity(context: Context) {
         val intent = Intent(context, EmojiActivity::class.java)
+        context.startActivity(intent)
+    }
+
+    fun navigateToRetrofitActivity(context: Context) {
+        val intent = Intent(context, RetrofitActivity::class.java)
         context.startActivity(intent)
     }
 
