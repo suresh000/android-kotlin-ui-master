@@ -10,4 +10,9 @@
     <color name="grey_800">#424242</color>
 
     <color name="bgBottomNavigation">#fe485a</color>
+
+    <color name="colorBlack">#555555</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey">#707070</color>
+    <color name="colorGreyLight">#8A8A8A</color>
 </resources>

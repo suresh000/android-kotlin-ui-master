@@ -14,4 +14,8 @@ class AndroidViewModel(val mContext: Context) {
         AppNavigator.navigateToEmojiActivity(mContext)
     }
 
+    fun onRetrofitClick(view: View) {
+        AppNavigator.navigateToRetrofitActivity(mContext)
+    }
+
 }

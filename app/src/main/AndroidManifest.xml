@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.kotlin.ui">
-
-    <!-- Adding this meta-data will download the font when application is installed from
+    <!--
+     Adding this meta-data will download the font when application is installed from
         Google Play Store. This way the font will be downloaded and ready when your app starts
-        for the first time. -->
-    <meta-data android:name="fontProviderRequests" android:value="Noto Color Emoji Compat"/>
+        for the first time.
+    -->
+    <meta-data
+            android:name="fontProviderRequests"
+            android:value="Noto Color Emoji Compat"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -21,10 +25,6 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".emoji.EmojiActivity">
-        </activity>
-        <activity android:name=".bottomNavigation.BottomNavigationActivity">
-        </activity>
 
         <meta-data
                 android:name="com.google.android.gms.version"
@@ -33,10 +33,6 @@
                 android:name="com.google.android.geo.API_KEY"
                 android:value="AIzaSyCTGTGu4mLKKSRKiA-5qibUlKewkjNlqMw"/>
 
-        <activity android:name=".google.GoogleActivity">
-        </activity>
-        <activity android:name=".home.add.AddUserActivity">
-        </activity>
         <activity android:name=".dashboard.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -44,6 +40,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".retrofitExample.RetrofitActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".emoji.EmojiActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".bottomNavigation.BottomNavigationActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".google.GoogleActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".home.add.AddUserActivity"
+                  android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
