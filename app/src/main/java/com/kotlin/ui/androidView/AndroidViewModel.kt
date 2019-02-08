@@ -18,4 +18,12 @@ class AndroidViewModel(val mContext: Context) {
         AppNavigator.navigateToRetrofitActivity(mContext)
     }
 
+    fun onWithoutUIActivityClick(view: View) {
+        AppNavigator.navigateToWithoutUIActivity(mContext)
+    }
+
+    fun onAsyncTaskActivityClick(view: View) {
+        AppNavigator.navigateToAsyncTaskActivity(mContext)
+    }
+
 }

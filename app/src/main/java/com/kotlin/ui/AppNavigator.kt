@@ -2,6 +2,8 @@ package com.kotlin.ui
 
 import android.content.Context
 import android.content.Intent
+import com.kotlin.ui.activityWithoutUi.WithoutUIActivity
+import com.kotlin.ui.asynctask.AsyncTaskActivity
 import com.kotlin.ui.bottomNavigation.BottomNavigationActivity
 import com.kotlin.ui.emoji.EmojiActivity
 import com.kotlin.ui.google.GoogleActivity
@@ -32,6 +34,16 @@ object AppNavigator {
 
     fun navigateToRetrofitActivity(context: Context) {
         val intent = Intent(context, RetrofitActivity::class.java)
+        context.startActivity(intent)
+    }
+
+    fun navigateToWithoutUIActivity(context: Context) {
+        val intent = Intent(context, WithoutUIActivity::class.java)
+        context.startActivity(intent)
+    }
+
+    fun navigateToAsyncTaskActivity(context: Context) {
+        val intent = Intent(context, AsyncTaskActivity::class.java)
         context.startActivity(intent)
     }
 
