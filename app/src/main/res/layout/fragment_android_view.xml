@@ -10,8 +10,7 @@
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:overScrollMode="never"
-            android:background="@android:color/white">
+            android:overScrollMode="never">
 
         <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -84,6 +83,17 @@
                     app:layout_constraintTop_toBottomOf="@+id/withoutUIActivityButton"
                     android:text="AsyncTask"
                     android:onClick="@{vm::onAsyncTaskActivityClick}"
+                    android:textAllCaps="false"/>
+
+            <com.kotlin.customview.widgets.CustomButton
+                    android:id="@+id/customViewButton"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
+                    app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                    app:layout_constraintTop_toBottomOf="@+id/asyncTaskButton"
+                    android:text="Custom View"
+                    android:onClick="@{vm::onCustomViewActivityClick}"
                     android:textAllCaps="false"/>
 
         </android.support.constraint.ConstraintLayout>

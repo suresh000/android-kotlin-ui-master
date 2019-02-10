@@ -26,4 +26,8 @@ class AndroidViewModel(val mContext: Context) {
         AppNavigator.navigateToAsyncTaskActivity(mContext)
     }
 
+    fun onCustomViewActivityClick(view: View) {
+        AppNavigator.navigateToCustomViewActivity(mContext)
+    }
+
 }

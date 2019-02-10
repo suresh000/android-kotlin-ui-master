@@ -5,6 +5,7 @@ import android.content.Intent
 import com.kotlin.ui.activityWithoutUi.WithoutUIActivity
 import com.kotlin.ui.asynctask.AsyncTaskActivity
 import com.kotlin.ui.bottomNavigation.BottomNavigationActivity
+import com.kotlin.ui.customView.CustomViewActivity
 import com.kotlin.ui.emoji.EmojiActivity
 import com.kotlin.ui.google.GoogleActivity
 import com.kotlin.ui.home.add.AddUserActivity
@@ -44,6 +45,11 @@ object AppNavigator {
 
     fun navigateToAsyncTaskActivity(context: Context) {
         val intent = Intent(context, AsyncTaskActivity::class.java)
+        context.startActivity(intent)
+    }
+
+    fun navigateToCustomViewActivity(context: Context) {
+        val intent = Intent(context, CustomViewActivity::class.java)
         context.startActivity(intent)
     }
 

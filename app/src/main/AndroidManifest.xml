@@ -59,7 +59,9 @@
                 android:name=".activityWithoutUi.WithoutUIActivity"
                 android:screenOrientation="portrait"
                 android:theme="@android:style/Theme.NoDisplay"/>
-        <activity android:name=".asynctask.AsyncTaskActivity" />
+        <activity android:name=".asynctask.AsyncTaskActivity"/>
+        <activity android:name=".customView.CustomViewActivity"
+                  android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
