@@ -4,7 +4,11 @@ import android.content.Context
 import android.view.View
 import com.kotlin.ui.AppNavigator
 
-class AndroidViewModel(val mContext: Context) {
+class AndroidViewModel(private val mContext: Context) {
+
+    fun onBottomMVPClick(view: View) {
+        AppNavigator.navigateToMVPActivity(mContext)
+    }
 
     fun onBottomNavigationClick(view: View) {
         AppNavigator.navigateToBottomNavigationActivity(mContext)

@@ -60,8 +60,13 @@
                 android:screenOrientation="portrait"
                 android:theme="@android:style/Theme.NoDisplay"/>
         <activity android:name=".asynctask.AsyncTaskActivity"/>
-        <activity android:name=".customView.CustomViewActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+                android:name=".customView.CustomViewActivity"
+                android:screenOrientation="portrait"/>
+        <activity android:name=".mvp.login.MVPActivity">
+        </activity>
+        <activity android:name=".mvp.main.MVPMainActivity">
+        </activity>
     </application>
 
 </manifest>
