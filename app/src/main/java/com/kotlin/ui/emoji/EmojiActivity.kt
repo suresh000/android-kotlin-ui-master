@@ -60,11 +60,9 @@ class EmojiActivity : AppCompatActivity() {
         mBinding.emojiCustomTextView.setText(getString(R.string.custom_text_view, EMOJI))
     }
 
-    @SuppressLint("RestrictedApi")
     private fun setActionBar() {
         setSupportActionBar(mBinding.bottomNavigationToolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(false)
         supportActionBar!!.title = "Android Emoji"
     }
 

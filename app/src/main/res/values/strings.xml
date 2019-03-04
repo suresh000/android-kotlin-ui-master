@@ -34,4 +34,11 @@
     <string name="regular_text_view">Regular TextView %s</string>
     <string name="custom_text_view">Custom TextView %s</string>
 
+    <!-- MVP -->
+    <string name="user_name_">username</string>
+    <string name="password">password</string>
+    <string name="log_in">Log in</string>
+    <string name="username_error">Username cannot be empty</string>
+    <string name="password_error">Password cannot be empty</string>
+
 </resources>

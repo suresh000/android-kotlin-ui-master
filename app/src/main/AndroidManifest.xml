@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.kotlin.ui">
+
     <!--
      Adding this meta-data will download the font when application is installed from
         Google Play Store. This way the font will be downloaded and ready when your app starts
@@ -25,7 +26,6 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-
         <meta-data
                 android:name="com.google.android.gms.version"
                 android:value="@integer/google_play_services_version"/>
@@ -40,16 +40,33 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".retrofitExample.RetrofitActivity"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".emoji.EmojiActivity"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".bottomNavigation.BottomNavigationActivity"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".google.GoogleActivity"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".home.add.AddUserActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+                android:name=".retrofitExample.RetrofitActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".emoji.EmojiActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".bottomNavigation.BottomNavigationActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".google.GoogleActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".home.add.AddUserActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activityWithoutUi.WithoutUIActivity"
+                android:screenOrientation="portrait"
+                android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:name=".asynctask.AsyncTaskActivity"/>
+        <activity
+                android:name=".customView.CustomViewActivity"
+                android:screenOrientation="portrait"/>
+        <activity android:name=".mvp.login.MVPActivity">
+        </activity>
+        <activity android:name=".mvp.main.MVPMainActivity">
+        </activity>
     </application>
 
 </manifest>
