@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/expandable_recyclerview" />
+            <option value="$PROJECT_DIR$/expandable_recyclerview_sample" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
