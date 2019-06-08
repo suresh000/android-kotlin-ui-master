@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.kotlin.ui">
-
     <!--
      Adding this meta-data will download the font when application is installed from
         Google Play Store. This way the font will be downloaded and ready when your app starts
@@ -26,6 +25,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+
         <meta-data
                 android:name="com.google.android.gms.version"
                 android:value="@integer/google_play_services_version"/>
@@ -63,10 +63,12 @@
         <activity
                 android:name=".customView.CustomViewActivity"
                 android:screenOrientation="portrait"/>
-        <activity android:name=".mvp.login.MVPActivity">
-        </activity>
-        <activity android:name=".mvp.main.MVPMainActivity">
-        </activity>
+        <activity android:name=".mvp.login.MVPActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".mvp.main.MVPMainActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".keyStore.KeyStoreActivity"
+                  android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import com.kotlin.ui.customView.CustomViewActivity
 import com.kotlin.ui.emoji.EmojiActivity
 import com.kotlin.ui.google.GoogleActivity
 import com.kotlin.ui.home.add.AddUserActivity
+import com.kotlin.ui.keyStore.KeyStoreActivity
 import com.kotlin.ui.mvp.login.MVPActivity
 import com.kotlin.ui.retrofitExample.RetrofitActivity
 
@@ -56,6 +57,11 @@ object AppNavigator {
 
     fun navigateToCustomViewActivity(context: Context) {
         val intent = Intent(context, CustomViewActivity::class.java)
+        context.startActivity(intent)
+    }
+
+    fun navigateToKeyStoreActivity(context: Context) {
+        val intent = Intent(context, KeyStoreActivity::class.java)
         context.startActivity(intent)
     }
 

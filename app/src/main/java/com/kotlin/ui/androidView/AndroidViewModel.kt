@@ -34,4 +34,8 @@ class AndroidViewModel(private val mContext: Context) {
         AppNavigator.navigateToCustomViewActivity(mContext)
     }
 
+    fun onKeyStoreActivityClick(view: View) {
+        AppNavigator.navigateToKeyStoreActivity(mContext)
+    }
+
 }
