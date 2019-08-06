@@ -1,4 +1,4 @@
-package com.ndml.compressor;
+package com.kotlin.compressor;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package com.ndml.compressor;
+package com.kotlin.compressor;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

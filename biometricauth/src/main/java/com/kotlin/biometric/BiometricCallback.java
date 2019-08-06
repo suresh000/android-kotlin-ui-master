@@ -1,4 +1,4 @@
-package com.ndml.biometric;
+package com.kotlin.biometric;
 
 public interface BiometricCallback {
 

@@ -1,4 +1,4 @@
-package com.ndml.biometric;
+package com.kotlin.biometric;
 
 import android.hardware.biometrics.BiometricPrompt;
 import androidx.annotation.RequiresApi;

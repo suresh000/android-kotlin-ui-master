@@ -1,4 +1,4 @@
-package com.ndml.compressor;
+package com.kotlin.compressor;
 
 import org.junit.Test;
 

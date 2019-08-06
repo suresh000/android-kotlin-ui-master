@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ndml.biometric">
+    package="com.kotlin.biometric">
 
     <!-- Step 1: Add the following permission to the app  -->
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
