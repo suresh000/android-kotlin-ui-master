@@ -41,4 +41,28 @@
     <string name="username_error">Username cannot be empty</string>
     <string name="password_error">Password cannot be empty</string>
 
+    <!-- ActionBar Title -->
+    <string name="biometric_title" translatable="false">Login</string>
+    <string name="biometric_subtitle" translatable="false">Login with your Fingerprint</string>
+    <string name="biometric_description" translatable="false">Place your finger on the device home button to verify your identity</string>
+    <string name="biometric_negative_button_text" translatable="false">CANCEL</string>
+
+    <string name="biometric_error_sdk_not_supported" translatable="false">Sdk version not supported</string>
+    <string name="biometric_error_hardware_not_supported" translatable="false">Device does not support biometric authentication</string>
+    <string name="biometric_error_fingerprint_not_available" translatable="false">Fingerprint is not registered in device</string>
+    <string name="biometric_error_permission_not_granted" translatable="false">Permission is not granted by user</string>
+    <string name="biometric_failure" translatable="false">Login not successful!</string>
+    <string name="biometric_cancelled" translatable="false">Authentication cancelled by user</string>
+    <string name="biometric_success" translatable="false">Login Successful</string>
+    <string name="mvp_architecture">MVP Architecture</string>
+    <string name="bottom_navigation_view">Bottom Navigation View</string>
+    <string name="android_emoji_library">Android Emoji Library</string>
+    <string name="retrofit">Retrofit</string>
+    <string name="without_ui_activity">Without UI Activity</string>
+    <string name="asynctask">AsyncTask</string>
+    <string name="custom_view">Custom View</string>
+    <string name="android_keystore">Android KeyStore</string>
+    <string name="biometric_auth">Biometric Auth</string>
+    <!-- End -->
+
 </resources>

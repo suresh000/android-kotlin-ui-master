@@ -55,6 +55,7 @@ dependencies {
     kapt "android.arch.lifecycle:compiler:$rootProject.archLifecycleVersion"
 
     implementation project(':customview')
+    implementation project(path: ':biometricauth')
 
     //google
     implementation "com.google.android.gms:play-services-maps:$rootProject.googleApiVersion"

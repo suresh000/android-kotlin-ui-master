@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import com.kotlin.ui.activityWithoutUi.WithoutUIActivity
 import com.kotlin.ui.asynctask.AsyncTaskActivity
+import com.kotlin.ui.biometricauth.BiometricAuthActivity
 import com.kotlin.ui.bottomNavigation.BottomNavigationActivity
 import com.kotlin.ui.customView.CustomViewActivity
 import com.kotlin.ui.emoji.EmojiActivity
@@ -62,6 +63,11 @@ object AppNavigator {
 
     fun navigateToKeyStoreActivity(context: Context) {
         val intent = Intent(context, KeyStoreActivity::class.java)
+        context.startActivity(intent)
+    }
+
+    fun navigateToBiometricAuthActivity(context: Context) {
+        val intent = Intent(context, BiometricAuthActivity::class.java)
         context.startActivity(intent)
     }
 

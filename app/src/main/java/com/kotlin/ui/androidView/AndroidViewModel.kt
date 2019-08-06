@@ -38,4 +38,8 @@ class AndroidViewModel(private val mContext: Context) {
         AppNavigator.navigateToKeyStoreActivity(mContext)
     }
 
+    fun onBiometricAuthActivityClick(view: View) {
+        AppNavigator.navigateToBiometricAuthActivity(mContext)
+    }
+
 }

@@ -1,74 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.kotlin.ui">
-    <!--
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kotlin.ui">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".AppController"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCTGTGu4mLKKSRKiA-5qibUlKewkjNlqMw" />
+        <!--
      Adding this meta-data will download the font when application is installed from
         Google Play Store. This way the font will be downloaded and ready when your app starts
         for the first time.
     -->
-    <meta-data
+        <meta-data
             android:name="fontProviderRequests"
-            android:value="Noto Color Emoji Compat"/>
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
-    <application
-            android:name=".AppController"
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme"
-            tools:ignore="GoogleAppIndexingWarning">
-
-        <meta-data
-                android:name="com.google.android.gms.version"
-                android:value="@integer/google_play_services_version"/>
-        <meta-data
-                android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyCTGTGu4mLKKSRKiA-5qibUlKewkjNlqMw"/>
+            android:value="Noto Color Emoji Compat" />
 
         <activity android:name=".dashboard.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-                android:name=".retrofitExample.RetrofitActivity"
-                android:screenOrientation="portrait"/>
+            android:name=".retrofitExample.RetrofitActivity"
+            android:screenOrientation="portrait" />
         <activity
-                android:name=".emoji.EmojiActivity"
-                android:screenOrientation="portrait"/>
+            android:name=".emoji.EmojiActivity"
+            android:screenOrientation="portrait" />
         <activity
-                android:name=".bottomNavigation.BottomNavigationActivity"
-                android:screenOrientation="portrait"/>
+            android:name=".bottomNavigation.BottomNavigationActivity"
+            android:screenOrientation="portrait" />
         <activity
-                android:name=".google.GoogleActivity"
-                android:screenOrientation="portrait"/>
+            android:name=".google.GoogleActivity"
+            android:screenOrientation="portrait" />
         <activity
-                android:name=".home.add.AddUserActivity"
-                android:screenOrientation="portrait"/>
+            android:name=".home.add.AddUserActivity"
+            android:screenOrientation="portrait" />
         <activity
-                android:name=".activityWithoutUi.WithoutUIActivity"
-                android:screenOrientation="portrait"
-                android:theme="@android:style/Theme.NoDisplay"/>
-        <activity android:name=".asynctask.AsyncTaskActivity"/>
+            android:name=".activityWithoutUi.WithoutUIActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <activity android:name=".asynctask.AsyncTaskActivity" />
         <activity
-                android:name=".customView.CustomViewActivity"
-                android:screenOrientation="portrait"/>
-        <activity android:name=".mvp.login.MVPActivity"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".mvp.main.MVPMainActivity"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".keyStore.KeyStoreActivity"
-                  android:screenOrientation="portrait"/>
+            android:name=".customView.CustomViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.login.MVPActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.main.MVPMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".keyStore.KeyStoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".biometricauth.BiometricAuthActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
